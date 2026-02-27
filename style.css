@@ -154,6 +154,9 @@ body {
   overflow: visible;      /* allow text to spill out */
   pointer-events: none;   /* prevents separate scrolling interaction */
   z-index: 50;
+
+  mix-blend-mode: difference;
+  color: white;
 }
 
 /* this is what will move vertically */
