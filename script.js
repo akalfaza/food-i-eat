@@ -45,13 +45,26 @@ entries.forEach((entry, i) => {
 // 2) Build story lines (placeholder logic — you can rewrite tone later)
 const storyLines = entries.map((e) => {
   // “Hungry Caterpillar-inspired” but yours
-  return `On ${e.date}, I ate ${e.food} in ${e.location}.`;
+  return `On ${e.date}, she ate ${e.food} in ${e.location}.`;
 });
 
 // 3) Render the story into the overlay
-storyInner.innerHTML = storyLines
+const introHTML = `
+<div class="storyIntro">
+  <h1>The Very Hungry Alara</h1>
+  <p>In the light of the moon a little egg lay on a leaf.</p>
+  <p>One Sunday morning the warm sun came up...</p>
+  <p>and POP, out of the egg came a tiny, very hungry caterpillar.</p>
+  <p>She started looking for some food.</p>
+</div>
+`;
+
+const storyHTML = storyLines
   .map((line, i) => `<p data-index="${i}">${line}</p>`)
   .join("");
+
+storyInner.innerHTML = introHTML + storyHTML;
+
 
 // 4) Sync: highlight story line based on which card is active (mobile)
 function setActiveIndex(idx) {
