@@ -148,10 +148,11 @@ const cities = entries.map((entry) => {
 const mostPhotographedCity = getMostCommon(cities);
 
 statsOverlay.innerHTML = `
+  <div>Food Alara Eats</div>
   <div># photos: ${photoCount}</div>
-  <div>countries: ${countries || 0}</div>
-  <div>most common food: ${mostCommonFood}</div>
-  <div>most photographed city: ${mostPhotographedCity}</div>
+  <div>Countries: ${countries || 0}</div>
+  <div>Most common food: ${mostCommonFood}</div>
+  <div>Most photographed city: ${mostPhotographedCity}</div>
 `;
 
 const io = new IntersectionObserver(
