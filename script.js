@@ -6,6 +6,8 @@ const storyInner = document.getElementById("storyInner");
 const hoverPreview = document.getElementById("hoverPreview");
 const hoverPreviewImg = document.getElementById("hoverPreviewImg");
 
+const statsOverlay = document.getElementById("statsOverlay");
+
 entries.forEach((entry, i) => {
   // Create wrapper
   const card = document.createElement("div");
@@ -83,6 +85,48 @@ cards.forEach((card) => {
     hoverPreview.classList.remove("show");
   });
 });
+
+// ===== DATA OVERLAY =====
+function getMostCommon(arr) {
+  const counts = {};
+  let winner = "";
+  let max = 0;
+
+  arr.forEach((item) => {
+    if (!item) return;
+    counts[item] = (counts[item] || 0) + 1;
+    if (counts[item] > max) {
+      max = counts[item];
+      winner = item;
+    }
+  });
+
+  return winner;
+}
+
+const photoCount = entries.length;
+
+const countries = new Set(
+  entries
+    .map((entry) => entry.country)
+    .filter(Boolean)
+).size;
+
+const foods = entries.map((entry) => entry.food);
+const mostCommonFood = getMostCommon(foods);
+
+const cities = entries.map((entry) => {
+  if (!entry.location) return "";
+  return entry.location.split(",")[0].trim();
+});
+const mostPhotographedCity = getMostCommon(cities);
+
+statsOverlay.innerHTML = `
+  <div># photos: ${photoCount}</div>
+  <div>countries: ${countries || 0}</div>
+  <div>most common food: ${mostCommonFood}</div>
+  <div>most photographed city: ${mostPhotographedCity}</div>
+`;
 
 const io = new IntersectionObserver(
   (entriesObs) => {

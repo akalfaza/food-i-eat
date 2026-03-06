@@ -107,6 +107,35 @@ body {
   }
 }
 
+/* ====== DATA OVERLAY ====== */
+
+.statsOverlay {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .statsOverlay {
+    display: block;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 120;
+
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: lowercase;
+    text-align: left;
+
+    mix-blend-mode: difference;
+    color: white;
+  }
+
+  .statsOverlay div {
+    margin-bottom: 2px;
+  }
+}
+
 /* ===== MOBILE SLIDES ===== */
 @media (max-width: 899px) {
 
