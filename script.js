@@ -51,7 +51,7 @@ const storyLines = entries.map((e) => {
 // 3) Render the story into the overlay
 const introHTML = `
 <div class="storyIntro">
-  <h1>The Very Hungry Alara</h1>
+  <h1>The Very Hungry Caterpillar Alara</h1>
   <p>In the light of the moon a little egg lay on a leaf.</p>
   <p>One Sunday morning the warm sun came up...</p>
   <p>and POP, out of the egg came a tiny, very hungry caterpillar.</p>
@@ -59,11 +59,24 @@ const introHTML = `
 </div>
 `;
 
+const endHTML = `
+<div class="storyEnd">
+  <p>Now she wasn't hungry anymore</p>
+  <p>and he wasn't a little caterpillar anymore.</p>
+  <p>She built a small house,</p>
+  <p>called a cocoon,</p>
+  <p>around herself.</p>
+  <p>She stayed inside for more than two weeks.</p>
+  <p>Then she nibbled a hole in the cocoon, pushed her way out and... </p>
+  <p>She became a beautiful butterfly!</p>
+</div>
+`;
+
 const storyHTML = storyLines
   .map((line, i) => `<p data-index="${i}">${line}</p>`)
   .join("");
 
-storyInner.innerHTML = introHTML + storyHTML;
+storyInner.innerHTML = introHTML + storyHTML + endHTML;
 
 
 // 4) Sync: highlight story line based on which card is active (mobile)
