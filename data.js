@@ -486,14 +486,6 @@ const entries = [
   },
   {
     src: "img/61.jpg",
-    date: "Mar 8, 2025",
-    location: "Istanbul, Turkey",
-    // time: "11:42 PM"
-    food: "Omlette",
-    country: "Turkey"
-  },
-  {
-    src: "img/62.jpg",
     date: "Mar 29, 2025",
     location: "Zurich, Switzerland",
     // time: "11:42 PM"
@@ -501,7 +493,7 @@ const entries = [
     country: "Switzerland"
   },
   {
-    src: "img/63.jpg",
+    src: "img/62.jpg",
     date: "Mar 31, 2025",
     location: "Weil am Rhein, Germany",
     // time: "11:42 PM"
@@ -509,7 +501,7 @@ const entries = [
     country: "Germany"
   },
   {
-    src: "img/64.jpg",
+    src: "img/63.jpg",
     date: "Apr 19, 2025",
     location: "Istanbul, Turkey",
     // time: "11:42 PM"
@@ -517,7 +509,7 @@ const entries = [
     country: "Turkey"
   },
   {
-    src: "img/65.jpg",
+    src: "img/64.jpg",
     date: "Apr 29, 2025",
     location: "Istanbul, Turkey",
     // time: "11:42 PM"
@@ -525,7 +517,7 @@ const entries = [
     country: "Turkey"
   },
   {
-    src: "img/66.jpg",
+    src: "img/65.jpg",
     date: "May 4, 2025",
     location: "Istanbul, Turkey",
     // time: "11:42 PM"
