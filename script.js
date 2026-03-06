@@ -205,26 +205,6 @@ window.addEventListener("load", () => {
   syncScroll(0);
 });
 
-// let lastIdx = -1;
-
-// function onProgressChanged(progress) {
-//   const idx = Math.round(progress * (entries.length - 1));
-//   if (idx === lastIdx) return;
-//   lastIdx = idx;
-
-//   const e = entries[idx];
-
-//   // highlight
-//   if (window.setCountryByName && e.country) {
-//     window.setCountryByName(e.country);
-//   }
-
-//   // rotate
-//   if (window.rotateTo && e.lat != null && e.lon != null) {
-//     window.rotateTo(e.lat, e.lon);
-//   }
-// }
-
 
 
 
