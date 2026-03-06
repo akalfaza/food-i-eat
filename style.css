@@ -69,6 +69,44 @@ body {
 }
 }
 
+/* ===== HOVER PREVIEW ==== */
+
+.hoverPreview {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .hoverPreview {
+    display: block; /* important */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.96);
+    z-index: 100;
+
+    width: min(32vw, 420px);
+    max-height: 70vh;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s ease, transform 0.1s ease;
+  }
+
+  .hoverPreview img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+  }
+
+  .hoverPreview.show {
+    opacity: 1;
+    mix-blend-mode:normal;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
 /* ===== MOBILE SLIDES ===== */
 @media (max-width: 899px) {
 

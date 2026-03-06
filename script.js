@@ -3,6 +3,9 @@ const storyPanelEl = document.getElementById("storyPanel");
 const storyMoverEl = document.getElementById("storyMover");
 const storyInner = document.getElementById("storyInner");
 
+const hoverPreview = document.getElementById("hoverPreview");
+const hoverPreviewImg = document.getElementById("hoverPreviewImg");
+
 entries.forEach((entry, i) => {
   // Create wrapper
   const card = document.createElement("div");
@@ -61,6 +64,25 @@ function setActiveIndex(idx) {
 
 // Use IntersectionObserver to detect the most visible slide in the horizontal scroller
 const cards = Array.from(document.querySelectorAll(".card"));
+
+// Desktop hover preview in the center
+cards.forEach((card) => {
+  card.addEventListener("mouseenter", () => {
+    if (window.innerWidth <= 899) return;
+
+    const img = card.querySelector("img");
+    if (!img) return;
+
+    hoverPreviewImg.src = img.src;
+    hoverPreviewImg.alt = img.alt || "";
+    hoverPreview.classList.add("show");
+  });
+
+  card.addEventListener("mouseleave", () => {
+    if (window.innerWidth <= 899) return;
+    hoverPreview.classList.remove("show");
+  });
+});
 
 const io = new IntersectionObserver(
   (entriesObs) => {
