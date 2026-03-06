@@ -444,4 +444,388 @@ const entries = [
     food: "Butter Pancakes",
     country: "US"
   },
+  {
+    src: "img/56.jpg",
+    date: "Mar 8, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Omlette",
+    country: "Turkey"
+  },
+  {
+    src: "img/57.jpg",
+    date: "Mar 8, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Pancakes",
+    country: "Turkey"
+  },
+  {
+    src: "img/58.jpg",
+    date: "Mar 8, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Pasta",
+    country: "Turkey"
+  },
+  {
+    src: "img/59.jpg",
+    date: "Mar 8, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Shredded Meat",
+    country: "Turkey"
+  },
+  {
+    src: "img/60.jpg",
+    date: "Mar 8, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Pavlova",
+    country: "Turkey"
+  },
+  {
+    src: "img/61.jpg",
+    date: "Mar 8, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Omlette",
+    country: "Turkey"
+  },
+  {
+    src: "img/62.jpg",
+    date: "Mar 29, 2025",
+    location: "Zurich, Switzerland",
+    // time: "11:42 PM"
+    food: "Panna Cotta",
+    country: "Switzerland"
+  },
+  {
+    src: "img/63.jpg",
+    date: "Mar 31, 2025",
+    location: "Weil am Rhein, Germany",
+    // time: "11:42 PM"
+    food: "Salmon Toast & Waffles",
+    country: "Germany"
+  },
+  {
+    src: "img/64.jpg",
+    date: "Apr 19, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Rice Bowl",
+    country: "Turkey"
+  },
+  {
+    src: "img/65.jpg",
+    date: "Apr 29, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Hummus Bowl & Patatoes",
+    country: "Turkey"
+  },
+  {
+    src: "img/66.jpg",
+    date: "May 4, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Döner",
+    country: "Turkey"
+  },
+  {
+    src: "img/67.jpg",
+    date: "May 23, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Salad",
+    country: "Turkey"
+  },
+  {
+    src: "img/68.jpg",
+    date: "Jun 14, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Birthday Cupcakes",
+    country: "Turkey"
+  },
+  {
+    src: "img/69.jpg",
+    date: "Jun 27, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Bagel & Coffee",
+    country: "Turkey"
+  },
+  {
+    src: "img/70.jpg",
+    date: "Jun 28, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Tiramisu",
+    country: "Turkey"
+  },
+  {
+    src: "img/71.jpg",
+    date: "Jul 13, 2025",
+    location: "London, England",
+    // time: "11:42 PM"
+    food: "Thai Meat & Rice",
+    country: "England"
+  },
+  {
+    src: "img/72.jpg",
+    date: "Jul 13, 2025",
+    location: "London, England",
+    // time: "11:42 PM"
+    food: "Ice Cream",
+    country: "England"
+  },
+  {
+    src: "img/73.jpg",
+    date: "Jul 14, 2025",
+    location: "London, England",
+    // time: "11:42 PM"
+    food: "Pad Thai",
+    country: "England"
+  },
+  {
+    src: "img/74.jpg",
+    date: "Jul 16, 2025",
+    location: "London, England",
+    // time: "11:42 PM"
+    food: "Breakfast Sandwich",
+    country: "England"
+  },
+  {
+    src: "img/75.jpg",
+    date: "Jul 16, 2025",
+    location: "London, England",
+    // time: "11:42 PM"
+    food: "Burger & Soft Serve",
+    country: "England"
+  },
+  {
+    src: "img/76.jpg",
+    date: "Jul 19, 2025",
+    location: "London, England",
+    // time: "11:42 PM"
+    food: "Colbert Müsli",
+    country: "England"
+  },
+  {
+    src: "img/77.jpg",
+    date: "Jul 27, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Breakfast Sandwich",
+    country: "Turkey"
+  },
+  {
+    src: "img/78.jpg",
+    date: "Jul 27, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Pastry",
+    country: "Turkey"
+  },
+  {
+    src: "img/79.jpg",
+    date: "Aug 12, 2025",
+    location: "Cesme, Turkey",
+    // time: "11:42 PM"
+    food: "Yogurt Bowl",
+    country: "Turkey"
+  },
+  {
+    src: "img/80.jpg",
+    date: "Aug 16, 2025",
+    location: "Cesme, Turkey",
+    // time: "11:42 PM"
+    food: "Chicken Fingers & Salad",
+    country: "Turkey"
+  },
+  {
+    src: "img/81.jpg",
+    date: "Aug 16, 2025",
+    location: "Cesme, Turkey",
+    // time: "11:42 PM"
+    food: "Chocolate Dessert",
+    country: "Turkey"
+  },
+  {
+    src: "img/82.jpg",
+    date: "Aug 20, 2025",
+    location: "London, England",
+    // time: "11:42 PM"
+    food: "Pastry",
+    country: "England"
+  },
+  {
+    src: "img/83.jpg",
+    date: "Aug 20, 2025",
+    location: "London, England",
+    // time: "11:42 PM"
+    food: "Fish & Chips",
+    country: "England"
+  },
+  {
+    src: "img/84.jpg",
+    date: "Aug 21, 2025",
+    location: "London, England",
+    // time: "11:42 PM"
+    food: "Pastry",
+    country: "England"
+  },
+  {
+    src: "img/85.jpg",
+    date: "Aug 21, 2025",
+    location: "London, England",
+    // time: "11:42 PM"
+    food: "Meat",
+    country: "England"
+  },
+  {
+    src: "img/86.jpg",
+    date: "Aug 22, 2025",
+    location: "London, England",
+    // time: "11:42 PM"
+    food: "Yogurt & Eggs",
+    country: "England"
+  },
+  {
+    src: "img/87.jpg",
+    date: "Aug 22, 2025",
+    location: "London, England",
+    // time: "11:42 PM"
+    food: "Pastry",
+    country: "England"
+  },
+  {
+    src: "img/88.jpg",
+    date: "Aug 25, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Burger & Fries",
+    country: "Turkey"
+  },
+  {
+    src: "img/89.jpg",
+    date: "Aug 25, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Green Omlette",
+    country: "Turkey"
+  },
+  {
+    src: "img/90.jpg",
+    date: "Oct 4, 2025",
+    location: "Boston, MA",
+    // time: "11:42 PM"
+    food: "Omlette & Pancakes",
+    country: "US"
+  },
+  {
+    src: "img/91.jpg",
+    date: "Oct 11, 2025",
+    location: "Providence, RI",
+    // time: "11:42 PM"
+    food: "Omlette & Coffee",
+    country: "US"
+  },
+  {
+    src: "img/92.jpg",
+    date: "Oct 11, 2025",
+    location: "Providence, RI",
+    // time: "11:42 PM"
+    food: "Pizza",
+    country: "US"
+  },
+  {
+    src: "img/93.jpg",
+    date: "Oct 11, 2025",
+    location: "Providence, RI",
+    // time: "11:42 PM"
+    food: "Ice Cream",
+    country: "US"
+  },
+  {
+    src: "img/94.jpg",
+    date: "Oct 11, 2025",
+    location: "Boston, MA",
+    // time: "11:42 PM"
+    food: "Salmon Bowl",
+    country: "US"
+  },
+  {
+    src: "img/95.jpg",
+    date: "Nov 8, 2025",
+    location: "Boston, MA",
+    // time: "11:42 PM"
+    food: "Hamburger",
+    country: "US"
+  },
+  {
+    src: "img/96.jpg",
+    date: "Nov 8, 2025",
+    location: "Boston, MA",
+    // time: "11:42 PM"
+    food: "Profiterol",
+    country: "US"
+  },
+  {
+    src: "img/97.jpg",
+    date: "Nov 12, 2025",
+    location: "Boston, MA",
+    // time: "11:42 PM"
+    food: "Greek Salad",
+    country: "US"
+  },
+  {
+    src: "img/98.jpg",
+    date: "Nov 15, 2025",
+    location: "Boston, MA",
+    // time: "11:42 PM"
+    food: "Tacos",
+    country: "US"
+  },
+  {
+    src: "img/99.jpg",
+    date: "Nov 16, 2025",
+    location: "Boston, MA",
+    // time: "11:42 PM"
+    food: "Avocado Toast",
+    country: "US"
+  },
+  {
+    src: "img/100.jpg",
+    date: "Dec 9, 2025",
+    location: "Boston, MA",
+    // time: "11:42 PM"
+    food: "Udon",
+    country: "US"
+  },
+  {
+    src: "img/101.jpg",
+    date: "Dec 10, 2025",
+    location: "Boston, MA",
+    // time: "11:42 PM"
+    food: "Lemon Tart",
+    country: "US"
+  },
+  {
+    src: "img/102.jpg",
+    date: "Dec 27, 2025",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Sandwich & Pastries",
+    country: "Turkey"
+  },
+{
+    src: "img/103.jpg",
+    date: "Jan 2, 2026",
+    location: "Istanbul, Turkey",
+    // time: "11:42 PM"
+    food: "Hot Chocolate & Cookie",
+    country: "Turkey"
+  },
 ];
