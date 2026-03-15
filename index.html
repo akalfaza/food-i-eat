@@ -14,6 +14,29 @@
 
       <div class="statsOverlay" id="statsOverlay"></div>
 
+      <div class="projectOverlay" id="projectOverlay" aria-hidden="true">
+            <div class="projectOverlay__panel">
+                  <button class="projectOverlay__close" id="projectOverlayClose" aria-label="Close project description">
+                        ×
+                  </button>
+
+                  <h2>Food Alara Eats</h2>
+                  <p>
+                        Food Alara Eats is a visual diary built from photographs of meals across different places and
+                        moments.
+                        Inspired by the structure of The Very Hungry Caterpillar, the project turns a camera roll into a
+                        scrolling story
+                        about memory, repetition, appetite, and everyday documentation. Each image becomes both a record
+                        of what was eaten
+                        and a fragment of a larger personal archive.
+                  </p>
+                  <br>
+                  <p>
+                        On smaller screens, the story behind the photos is revealed, transforming the gallery into a
+                        narrative about what Alara ate. </p>
+            </div>
+      </div>
+
       <div class="hoverPreview" id="hoverPreview">
             <img id="hoverPreviewImg" src="" alt="">
       </div>
@@ -22,9 +45,30 @@
             <img id="caterpillar" src="cat-img/cat_1.png" alt="Walking caterpillar">
       </div>
 
+      <div id="flyingFoodLayer"></div>
+
       <aside class="storyPanel" id="storyPanel">
             <div class="storyMover" id="storyMover">
+                  <div class="storyIntro">
+                        <h1>The Very Hungry Caterpillar</h1>
+                        <p>In the light of the moon a little egg lay on a leaf.</p>
+                        <p>One Sunday morning the warm sun came up...</p>
+                        <p>and POP, out of the egg came a tiny, very hungry caterpillar.</p>
+                        <p>She started looking for some food.</p>
+                        <br><br>
+                        <p>...</p>
+                  </div>
                   <div class="storyInner" id="storyInner"></div>
+                  <div class="storyEnd">
+                        <p>Now she wasn't hungry anymore</p>
+                        <p>and he wasn't a little caterpillar anymore.</p>
+                        <p>She built a small house,</p>
+                        <p>called a cocoon,</p>
+                        <p>around herself.</p>
+                        <p>She stayed inside for more than two weeks.</p>
+                        <p>Then she nibbled a hole in the cocoon, pushed her way out and... </p>
+                        <p>She became a beautiful butterfly!</p>
+                  </div>
             </div>
       </aside>
 
@@ -39,89 +83,89 @@
                   "cat-img/cat_5.png",
                   "cat-img/cat_6.png"
             ];
-const caterpillar = document.getElementById("caterpillar");
-  const wrap = document.getElementById("caterpillar-wrap");
+            const caterpillar = document.getElementById("caterpillar");
+            const wrap = document.getElementById("caterpillar-wrap");
 
-  let frameIndex = 0;
-  let direction = 1;
-  let pos = 20;
-  let speed = 0.6;
+            let frameIndex = 0;
+            let direction = 1;
+            let pos = 20;
+            let speed = 0.6;
 
-  // frame animation
-  setInterval(() => {
-    frameIndex = (frameIndex + 1) % frames.length;
-    caterpillar.src = frames[frameIndex];
-  }, 1000);
+            // frame animation
+            setInterval(() => {
+                  frameIndex = (frameIndex + 1) % frames.length;
+                  caterpillar.src = frames[frameIndex];
+            }, 1000);
 
-  function animateCaterpillar() {
-    const isMobile = window.innerWidth <= 899;
+            function animateCaterpillar() {
+                  const isMobile = window.innerWidth <= 899;
 
-    if (isMobile) {
-      const caterpillarWidth = wrap.offsetWidth;
-      const minX = 20;
-      const maxX = window.innerWidth - caterpillarWidth - 20;
+                  if (isMobile) {
+                        const caterpillarWidth = wrap.offsetWidth;
+                        const minX = 20;
+                        const maxX = window.innerWidth - caterpillarWidth - 20;
 
-      pos += speed * direction;
+                        pos += speed * direction;
 
-      if (pos >= maxX) {
-        pos = maxX;
-        direction = -1;
-      }
+                        if (pos >= maxX) {
+                              pos = maxX;
+                              direction = -1;
+                        }
 
-      if (pos <= minX) {
-        pos = minX;
-        direction = 1;
-      }
+                        if (pos <= minX) {
+                              pos = minX;
+                              direction = 1;
+                        }
 
-      wrap.style.left = pos + "px";
-      wrap.style.top = "16px";
-      wrap.style.right = "auto";
+                        wrap.style.left = pos + "px";
+                        wrap.style.top = "16px";
+                        wrap.style.right = "auto";
 
-      if (direction === 1) {
-        caterpillar.style.transform = "scaleX(1)";
-      } else {
-        caterpillar.style.transform = "scaleX(-1)";
-      }
+                        if (direction === 1) {
+                              caterpillar.style.transform = "scaleX(1)";
+                        } else {
+                              caterpillar.style.transform = "scaleX(-1)";
+                        }
 
-    } else {
-      const caterpillarHeight = wrap.offsetHeight;
-      const minY = 20;
-      const maxY = window.innerHeight - caterpillarHeight - 20;
+                  } else {
+                        const caterpillarHeight = wrap.offsetHeight;
+                        const minY = 20;
+                        const maxY = window.innerHeight - caterpillarHeight - 20;
 
-      pos += speed * direction;
+                        pos += speed * direction;
 
-      if (pos >= maxY) {
-        pos = maxY;
-        direction = -1;
-      }
+                        if (pos >= maxY) {
+                              pos = maxY;
+                              direction = -1;
+                        }
 
-      if (pos <= minY) {
-        pos = minY;
-        direction = 1;
-      }
+                        if (pos <= minY) {
+                              pos = minY;
+                              direction = 1;
+                        }
 
-      wrap.style.top = pos + "px";
-      wrap.style.right = "-20px";
-      wrap.style.left = "auto";
+                        wrap.style.top = pos + "px";
+                        wrap.style.right = "-20px";
+                        wrap.style.left = "auto";
 
-      if (direction === 1) {
-        caterpillar.style.transform = "rotate(90deg)";
-      } else {
-        caterpillar.style.transform = "rotate(-90deg)";
-      }
-    }
+                        if (direction === 1) {
+                              caterpillar.style.transform = "rotate(90deg)";
+                        } else {
+                              caterpillar.style.transform = "rotate(-90deg)";
+                        }
+                  }
 
-    requestAnimationFrame(animateCaterpillar);
-  }
+                  requestAnimationFrame(animateCaterpillar);
+            }
 
-  // reset position when screen size changes
-  function resetPosition() {
-    pos = 20;
-  }
+            // reset position when screen size changes
+            function resetPosition() {
+                  pos = 20;
+            }
 
-  window.addEventListener("resize", resetPosition);
+            window.addEventListener("resize", resetPosition);
 
-  animateCaterpillar();
+            animateCaterpillar();
       </script>
 
 </body>

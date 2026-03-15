@@ -8,6 +8,7 @@ const hoverPreviewImg = document.getElementById("hoverPreviewImg");
 
 const statsOverlay = document.getElementById("statsOverlay");
 
+
 entries.forEach((entry, i) => {
   // Create wrapper
   const card = document.createElement("div");
@@ -39,45 +40,54 @@ entries.forEach((entry, i) => {
 });
 
 
+// ABOUT POP UP
+const projectOverlay = document.getElementById("projectOverlay");
+const projectOverlayClose = document.getElementById("projectOverlayClose");
+
+function openProjectOverlay(e) {
+  if (window.innerWidth <= 899) return;
+  e.preventDefault();
+  projectOverlay.classList.add("show");
+  projectOverlay.setAttribute("aria-hidden", "false");
+}
+
+function closeProjectOverlay() {
+  projectOverlay.classList.remove("show");
+  projectOverlay.setAttribute("aria-hidden", "true");
+}
+
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("#projectLink");
+  if (link) {
+    openProjectOverlay(e);
+  }
+
+  if (
+    e.target.id === "projectOverlayClose" ||
+    e.target.id === "projectOverlay"
+  ) {
+    closeProjectOverlay();
+  }
+});
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeProjectOverlay();
+});
+
+
 
 
 
 // 2) Build story lines (placeholder logic — you can rewrite tone later)
 const storyLines = entries.map((e) => {
-  // “Hungry Caterpillar-inspired” but yours
-  return `On ${e.date}, she ate ${e.food} in ${e.location}.`;
+  return `On ${e.date}, she ate <span class="foodHighlight">${e.food}</span> in ${e.location}.`;
 });
-
-// 3) Render the story into the overlay
-const introHTML = `
-<div class="storyIntro">
-  <h1>The Very Hungry Caterpillar</h1>
-  <p>In the light of the moon a little egg lay on a leaf.</p>
-  <p>One Sunday morning the warm sun came up...</p>
-  <p>and POP, out of the egg came a tiny, very hungry caterpillar.</p>
-  <p>She started looking for some food.</p>
-</div>
-`;
-
-const endHTML = `
-<div class="storyEnd">
-  <p>Now she wasn't hungry anymore</p>
-  <p>and he wasn't a little caterpillar anymore.</p>
-  <p>She built a small house,</p>
-  <p>called a cocoon,</p>
-  <p>around herself.</p>
-  <p>She stayed inside for more than two weeks.</p>
-  <p>Then she nibbled a hole in the cocoon, pushed her way out and... </p>
-  <p>She became a beautiful butterfly!</p>
-</div>
-`;
 
 const storyHTML = storyLines
   .map((line, i) => `<p data-index="${i}">${line}</p>`)
   .join("");
 
-storyInner.innerHTML = introHTML + storyHTML + endHTML;
-
+storyInner.innerHTML = storyHTML;
 
 // 4) Sync: highlight story line based on which card is active (mobile)
 function setActiveIndex(idx) {
@@ -87,6 +97,7 @@ function setActiveIndex(idx) {
 
   const cur = storyInner.querySelector(`p[data-index="${idx}"]`);
   if (cur) cur.classList.add("active");
+  launchFlyingFood(entries[idx].food, idx);
 }
 
 
@@ -148,7 +159,9 @@ const cities = entries.map((entry) => {
 const mostPhotographedCity = getMostCommon(cities);
 
 statsOverlay.innerHTML = `
-  <div>Food Alara Eats</div>
+<div>
+    <a href="#" class="projectLink" id="projectLink">Food Alara Eats</a>
+  </div>
   <div># photos: ${photoCount}</div>
   <div>Countries: ${countries || 0}</div>
   <div>Most common food: ${mostCommonFood}</div>
@@ -197,7 +210,8 @@ function syncScroll(p) {
   galleryEl.scrollLeft = p * galleryMax;
 
   const panelH = storyPanelEl.clientHeight;
-  const contentH = storyInner.scrollHeight;
+  // const contentH = storyInner.scrollHeight;
+  const contentH = storyMoverEl.scrollHeight;
   const maxTranslate = Math.max(0, contentH - panelH);
 
   const y = -p * maxTranslate;
@@ -277,6 +291,49 @@ window.addEventListener("load", () => {
 });
 
 
+
+// FLYING FOOD
+const flyingFoods = {
+  pizza: "food/pizza.png",
+  pretzel: "food/pretzel.png",
+  udon: "food/udon.png",
+  taco: "food/taco.png",
+  "ice cream": "food/ice_cream.png",
+  pastry: "food/muffin.png",
+  cake: "food/cake.png"
+};
+
+const flyingFoodLayer = document.getElementById("flyingFoodLayer");
+let lastFlyingIndex = -1;
+
+function launchFlyingFood(foodName, idx) {
+  if (window.innerWidth > 899) return;
+  if (idx === lastFlyingIndex) return;
+
+  const key = foodName.trim().toLowerCase();
+  const imgSrc = flyingFoods[key];
+  if (!imgSrc) return;
+
+  lastFlyingIndex = idx;
+
+  const img = document.createElement("img");
+  img.src = imgSrc;
+  img.className = "flyingFood";
+
+  const randomTop = 20 + Math.random() * 60;
+  const randomRotate = -20 + Math.random() * 40;
+  const randomSize = 90 + Math.random() * 40;
+
+  img.style.top = `${randomTop}%`;
+  img.style.width = `${randomSize}px`;
+  img.style.transform = `translateY(-50%) rotate(${randomRotate}deg)`;
+
+  img.addEventListener("animationend", () => {
+    img.remove();
+  });
+
+  flyingFoodLayer.appendChild(img);
+}
 
 
 

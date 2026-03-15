@@ -259,16 +259,16 @@ body {
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(86vw, 520px);
+  width: min(74vw, 520px);
   height: 50vh;
 
   overflow: visible;      /* allow text to spill out */
   pointer-events: none;   /* prevents separate scrolling interaction */
   z-index: 50;
-
   mix-blend-mode: difference;
   color: white;
 }
+
 
 .storyIntro {
   margin-bottom: 60px;
@@ -281,10 +281,19 @@ body {
 
 .storyIntro p {
   margin-bottom: 8px;
+  font-weight: 600;
+  font-size: clamp(20px, 4vw, 36px);
+  line-height: 24px;
 }
 
 .storyEnd{
   margin-top: 60px;
+}
+
+.storyEnd p{
+  font-weight: 600;
+  font-size: clamp(20px, 4vw, 36px);
+  line-height: 24px;
 }
 
 /* this is what will move vertically */
@@ -294,15 +303,121 @@ body {
 }
 
 /* center the text visually */
+
 .storyInner{
   text-align: left;
 }
 
 .storyInner p{
-  margin: 0 0 14px 0;
+  margin: 0 0 30px 0;
   font-weight: 600;
   font-size: clamp(20px, 4vw, 36px);
-  line-height: 1.4;
+  line-height: 24px;
 }
 
+.storyInner .foodHighlight {
+  display: inline-block;
+  padding: 0.08em 0.3em 0.02em 0.3em;
+}
+
+.storyInner p.active .foodHighlight {
+  background: rgb(38, 255, 0);
+  color: black;
+  mix-blend-mode: normal !important;
+}
+}
+
+
+
+/* ABOUT POP UP */
+
+.projectLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  cursor: pointer;
+}
+
+.projectOverlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.projectOverlay.show {
+  display: flex;
+}
+
+.projectOverlay__panel {
+  position: relative;
+  height: min(40vh, 600px);
+  width: min(26vw, 360px);
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 80px);
+  overflow-y:hidden;
+  padding: 22px 22px 26px 22px;
+  background: black;
+  color: white;
+}
+
+.projectOverlay__panel h2 {
+  font-size: 20px;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.projectOverlay__panel p {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.projectOverlay__close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 899px) {
+  .projectOverlay {
+    display: none !important;
+  }
+}
+
+/* FLYING FOOD */
+#flyingFoodLayer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 200;
+  overflow: hidden;
+}
+
+.flyingFood {
+  position: absolute;
+  left: -160px;
+  top: 50%;
+  width: 110px;
+  height: auto;
+  transform: translateY(-50%);
+  animation: flyAcross 3s linear forwards;
+}
+
+@keyframes flyAcross {
+  0% {
+    left: -160px;
+  }
+  100% {
+    left: calc(100vw + 160px);
+  }
 }
