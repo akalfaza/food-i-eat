@@ -74,13 +74,13 @@ const caterpillar = document.getElementById("caterpillar");
       }
 
       wrap.style.left = pos + "px";
-      wrap.style.top = "8px";
+      wrap.style.top = "16px";
       wrap.style.right = "auto";
 
       if (direction === 1) {
-        caterpillar.style.transform = "rotate(0deg)";
+        caterpillar.style.transform = "scaleX(1)";
       } else {
-        caterpillar.style.transform = "rotate(180deg)";
+        caterpillar.style.transform = "scaleX(-1)";
       }
 
     } else {

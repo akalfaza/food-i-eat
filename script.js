@@ -51,7 +51,7 @@ const storyLines = entries.map((e) => {
 // 3) Render the story into the overlay
 const introHTML = `
 <div class="storyIntro">
-  <h1>The Very Hungry Caterpillar Alara</h1>
+  <h1>The Very Hungry Caterpillar</h1>
   <p>In the light of the moon a little egg lay on a leaf.</p>
   <p>One Sunday morning the warm sun came up...</p>
   <p>and POP, out of the egg came a tiny, very hungry caterpillar.</p>
