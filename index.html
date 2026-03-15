@@ -39,51 +39,87 @@
                   "cat-img/cat_5.png",
                   "cat-img/cat_6.png"
             ];
-
-            const caterpillar = document.getElementById("caterpillar");
+const caterpillar = document.getElementById("caterpillar");
   const wrap = document.getElementById("caterpillar-wrap");
 
   let frameIndex = 0;
-  let direction = 1; // 1 = down, -1 = up
-  let y = 20;
-  let speed = 0.5; // pixels per tick
+  let direction = 1;
+  let pos = 20;
+  let speed = 0.6;
 
-  // swap frames
+  // frame animation
   setInterval(() => {
     frameIndex = (frameIndex + 1) % frames.length;
     caterpillar.src = frames[frameIndex];
   }, 1000);
 
   function animateCaterpillar() {
-    const caterpillarHeight = wrap.offsetHeight;
-    const maxY = window.innerHeight - caterpillarHeight - 20;
-    const minY = 20;
+    const isMobile = window.innerWidth <= 899;
 
-    y += speed * direction;
+    if (isMobile) {
+      const caterpillarWidth = wrap.offsetWidth;
+      const minX = 20;
+      const maxX = window.innerWidth - caterpillarWidth - 20;
 
-    // change direction at bottom
-    if (y >= maxY) {
-      y = maxY;
-      direction = -1;
-    }
+      pos += speed * direction;
 
-    // change direction at top
-    if (y <= minY) {
-      y = minY;
-      direction = 1;
-    }
+      if (pos >= maxX) {
+        pos = maxX;
+        direction = -1;
+      }
 
-    wrap.style.top = y + "px";
+      if (pos <= minX) {
+        pos = minX;
+        direction = 1;
+      }
 
-    // rotate depending on direction
-    if (direction === 1) {
-      caterpillar.style.transform = "rotate(90deg)";
+      wrap.style.left = pos + "px";
+      wrap.style.top = "8px";
+      wrap.style.right = "auto";
+
+      if (direction === 1) {
+        caterpillar.style.transform = "rotate(0deg)";
+      } else {
+        caterpillar.style.transform = "rotate(180deg)";
+      }
+
     } else {
-      caterpillar.style.transform = "rotate(-90deg)";
+      const caterpillarHeight = wrap.offsetHeight;
+      const minY = 20;
+      const maxY = window.innerHeight - caterpillarHeight - 20;
+
+      pos += speed * direction;
+
+      if (pos >= maxY) {
+        pos = maxY;
+        direction = -1;
+      }
+
+      if (pos <= minY) {
+        pos = minY;
+        direction = 1;
+      }
+
+      wrap.style.top = pos + "px";
+      wrap.style.right = "-20px";
+      wrap.style.left = "auto";
+
+      if (direction === 1) {
+        caterpillar.style.transform = "rotate(90deg)";
+      } else {
+        caterpillar.style.transform = "rotate(-90deg)";
+      }
     }
 
     requestAnimationFrame(animateCaterpillar);
   }
+
+  // reset position when screen size changes
+  function resetPosition() {
+    pos = 20;
+  }
+
+  window.addEventListener("resize", resetPosition);
 
   animateCaterpillar();
       </script>
