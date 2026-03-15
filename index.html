@@ -9,13 +9,17 @@
 </head>
 
 <body>
-      
+
       <div class="gallery" id="gallery"></div>
 
       <div class="statsOverlay" id="statsOverlay"></div>
 
       <div class="hoverPreview" id="hoverPreview">
             <img id="hoverPreviewImg" src="" alt="">
+      </div>
+
+      <div id="caterpillar-wrap">
+            <img id="caterpillar" src="cat-img/cat_1.png" alt="Walking caterpillar">
       </div>
 
       <aside class="storyPanel" id="storyPanel">
@@ -26,6 +30,63 @@
 
       <script src="data.js"></script>
       <script src="script.js"></script>
+      <script>
+            const frames = [
+                  "cat-img/cat_1.png",
+                  "cat-img/cat_2.png",
+                  "cat-img/cat_3.png",
+                  "cat-img/cat_4.png",
+                  "cat-img/cat_5.png",
+                  "cat-img/cat_6.png"
+            ];
+
+            const caterpillar = document.getElementById("caterpillar");
+  const wrap = document.getElementById("caterpillar-wrap");
+
+  let frameIndex = 0;
+  let direction = 1; // 1 = down, -1 = up
+  let y = 20;
+  let speed = 0.5; // pixels per tick
+
+  // swap frames
+  setInterval(() => {
+    frameIndex = (frameIndex + 1) % frames.length;
+    caterpillar.src = frames[frameIndex];
+  }, 1000);
+
+  function animateCaterpillar() {
+    const caterpillarHeight = wrap.offsetHeight;
+    const maxY = window.innerHeight - caterpillarHeight - 20;
+    const minY = 20;
+
+    y += speed * direction;
+
+    // change direction at bottom
+    if (y >= maxY) {
+      y = maxY;
+      direction = -1;
+    }
+
+    // change direction at top
+    if (y <= minY) {
+      y = minY;
+      direction = 1;
+    }
+
+    wrap.style.top = y + "px";
+
+    // rotate depending on direction
+    if (direction === 1) {
+      caterpillar.style.transform = "rotate(90deg)";
+    } else {
+      caterpillar.style.transform = "rotate(-90deg)";
+    }
+
+    requestAnimationFrame(animateCaterpillar);
+  }
+
+  animateCaterpillar();
+      </script>
 
 </body>
 

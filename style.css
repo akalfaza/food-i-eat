@@ -69,6 +69,30 @@ body {
 }
 }
 
+/*  ====== CATTERPILLAR GIF ========== */
+
+#caterpillar-wrap {
+  position: fixed;
+  right: -24px;
+  top: 20px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+#caterpillar {
+  width: 110px;
+  height: auto;
+  display: block;
+  transform-origin: center center;
+}
+
+@keyframes caterpillarBob {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-3px); }
+  100% { transform: translateY(0px); }
+}
+
+
 /* ===== HOVER PREVIEW ==== */
 
 .hoverPreview {
